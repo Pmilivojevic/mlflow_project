@@ -21,16 +21,16 @@
 Clone the repository
 
 ```bash
-https://github.com/entbappy/End-to-end-Machine-Learning-Project-with-MLflow
+https://github.com/Pmilivojevic/mlflow_project.git
 ```
 ### STEP 01- Create a conda environment after opening the repository
 
 ```bash
-conda create -n mlproj python=3.8 -y
+virtualenv venv
 ```
 
 ```bash
-conda activate mlproj
+source venv/bin/activate
 ```
 
 
@@ -63,20 +63,20 @@ open up you local host and port
 ### dagshub
 [dagshub](https://dagshub.com/)
 
-MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/End-to-end-Machine-Learning-Project-with-MLflow.mlflow \
-MLFLOW_TRACKING_USERNAME=entbappy \
-MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0 \
+MLFLOW_TRACKING_URI=https://dagshub.com/Pmilivojevic/mlflow_project.mlflow \
+MLFLOW_TRACKING_USERNAME=Pmilivojevic \
+MLFLOW_TRACKING_PASSWORD=3eb4a2ad7606a378ad785101dd04075d207d64b3 \
 python script.py
 
 Run this to export as env variables:
 
 ```bash
 
-export MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/End-to-end-Machine-Learning-Project-with-MLflow.mlflow
+export MLFLOW_TRACKING_URI=https://dagshub.com/Pmilivojevic/mlflow_project.mlflow
 
-export MLFLOW_TRACKING_USERNAME=entbappy 
+export MLFLOW_TRACKING_USERNAME=Pmilivojevic
 
-export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
+export MLFLOW_TRACKING_PASSWORD=3eb4a2ad7606a378ad785101dd04075d207d64b3
 
 ```
 

@@ -1,6 +1,10 @@
 from mlflowProject.constants import *
 from mlflowProject.utils.common import read_yaml, create_directories
 from mlflowProject.entity.config_entity import *
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 
 class ConfigurationManager:
@@ -75,3 +79,23 @@ class ConfigurationManager:
         )
         
         return model_trainer_config
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.ElasticNet
+        target = self.schema.TARGET_COLUMN
+        MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
+        
+        create_directories([config.root_dir])
+        
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path=config.model_path,
+            metric_file_name=config.metric_file_name,
+            all_params=params,
+            target_column=target.name,
+            mlflow_uri=MLFLOW_TRACKING_URI
+        )
+        
+        return model_evaluation_config
